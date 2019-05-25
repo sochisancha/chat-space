@@ -9,13 +9,15 @@
 - has_many :groups, through: :members
 - has_many :members
 
-# messagesテーブル
+## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |text|text||
 |image|string||
 |created_at|datetime|null:false|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -26,7 +28,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|group-name|string|null:false|
+|name|string|null:false|
 
 ### Association
 - has_many :users
