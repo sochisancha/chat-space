@@ -31,8 +31,8 @@
 |name|string|null:false|
 
 ### Association
-- has_many :users
-- has_many :messages, through: :members
+- has_many :users, through: :members
+- has_many :messages
 - has_many :members
 
 ## membersテーブル
