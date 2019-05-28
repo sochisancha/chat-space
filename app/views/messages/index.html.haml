@@ -6,11 +6,11 @@
           test
         %ul.user-menu
           %li
-            %a{:href=>"/"}
-              %i.fas.fa-edit.edit
+            = link_to  do
+              %i.fa.fa-edit.edit
           %li
-            %a{:href=>"/"}
-              %i.fas.fa-cog.set
+            = link_to  do
+              %i.fa.fa-cog.set
       .group
         %p.group__name
           上宮
@@ -38,18 +38,18 @@
             %p.upper-info__user
               so
             %p.upper-info__date
-              %span{:class => "supText"}
+              %span{class: "supText"}
                 2019/05/27(Mon) 17:00:00
           .message__text
             こんにちは
       .form 
         .new-message
           .input-box
-            %input.input-text{:placeholder => "type a message "}
+            %input.input-text{placeholder: "type a message "}
             %label.label-image
-              %i.far.fa-image
-              %input.image-label__input{:type => "file",:name => "message[image]"}
-          %input.submit{:type => "submit",:name => "commit",:value=>"Send"}
+              %i.fa.fa-image
+              %input.image-label__input{type: "file",name: "message[image]"}
+          %input.submit{type: "submit", name: "commit", value: "Send"}
       
 
 
