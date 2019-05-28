@@ -1,0 +1,56 @@
+.wrapper
+  .notification
+    .chat-side
+      .side-header
+        %p.side-header__name 
+          test
+        %ul.user-menu
+          %li
+            %a{:href=>"/"}
+              %i.fas.fa-edit.edit
+          %li
+            %a{:href=>"/"}
+              %i.fas.fa-cog.set
+      .group
+        %p.group__name
+          上宮
+        %p.group__text
+          こんにちは
+    .chat-main
+      .main-header
+        .main-header__wrapper
+          .current-group
+            .current-group__name
+              上宮
+            %ul.member-list
+              Member :
+              %li.member-list__member
+                山田
+              %li.member-list__member
+                中山
+              %li.member-list__member
+                伊藤
+          .main-header__edit-btn
+            Edit
+      .messages
+        .message
+          .upper-info
+            %p.upper-info__user
+              so
+            %p.upper-info__date
+              %span{:class => "supText"}
+                2019/05/27(Mon) 17:00:00
+          .message__text
+            こんにちは
+      .form 
+        .new-message
+          .input-box
+            %input.input-text{:placeholder => "type a message "}
+            %label.label-image
+              %i.far.fa-image
+              %input.image-label__input{:type => "file",:name => "message[image]"}
+          %input.submit{:type => "submit",:name => "commit",:value=>"Send"}
+      
+
+
+  

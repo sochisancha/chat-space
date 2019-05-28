@@ -1,0 +1,29 @@
+$liB:#38AEF0;
+@mixin side {
+  height:100px;
+  width:300px;
+  padding-left:20px;
+  padding-right:20px;
+  box-sizing: border-box;           
+}
+@mixin  main-name{
+  font-size: 16px;
+  font-weight: bold; 
+  color:#434A54;
+}
+@mixin main-date {
+  font-size: 12px;
+  margin-left: 10px;
+  color:#999; 
+}
+@mixin date-span {
+  font-size: 75.5%;
+  vertical-align: top;
+}
+@mixin main-text {
+  color:#434A54;
+  font-size:14px;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  
+}
