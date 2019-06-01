@@ -3,6 +3,7 @@ class GroupsController < ApplicationController
     @users = User.all
     @group = Group.new
   end
+
   def edit
   end
   def update
@@ -16,10 +17,3 @@ class GroupsController < ApplicationController
 
 end
 
-
-
-
-
-
-
-end
