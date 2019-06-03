@@ -11,7 +11,9 @@
   height:100vh;
   display: block;
     .side-header{
-    @include side;
+      height:100px;
+      box-sizing: border-box; 
+    padding:0px 20px;
     background-color: #253141;
       & p{
         color:white;
@@ -37,19 +39,22 @@
         }
       }
     }
-    .group{
-      @include side;
-       .group__name{
-        color:white;
-        font-size:15px; 
-        padding-top:20px;
+    .groups{
+      padding:20px;
+      .group{
+        margin: 0px 0px 40px 0px;
         box-sizing: border-box;
-        margin-bottom: 5px;
+        .group__name{
+          color:white;
+          font-size:15px; 
+          box-sizing: border-box;
+          margin-bottom: 5px;
+        }
+        .group__text{
+          font-size: 11px;
+          color:white;
+        }
       }
-       .group__text{
-         font-size: 11px;
-        color:white;
-       }
     }
   }
   
@@ -98,8 +103,10 @@
       }
      }
      .messages{
-       .message{
        padding:46px 40px;
+       .message{
+       padding:0px 0px 40px;
+       box-sizing: border-box;
        .upper-info{
          display:flex;
          .upper-info__user{
