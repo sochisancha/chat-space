@@ -1,56 +1,40 @@
 .wrapper
   .notification
-    .chat-side
-      .side-header
-        %p.side-header__name 
-          = current_user.name
-        %ul.user-menu
-          %li
-            = link_to new_group_path do 
-              %i.fa.fa-edit.edit
-          %li
-            = link_to  edit_user_registration_path(current_user) do
-              %i.fa.fa-cog.set
-      .group
-        %p.group__name
-          上宮
-        %p.group__text
-          こんにちは
+    = render partial: 'layouts/side_bar'
     .chat-main
       .main-header
         .main-header__wrapper
           .current-group
             .current-group__name
-              上宮
+              = @group.name
             %ul.member-list
               Member :
-              %li.member-list__member
-                山田
-              %li.member-list__member
-                中山
-              %li.member-list__member
-                伊藤
+              - @group.users.each do |member|
+                %li.member-list__member
+                  = member.name
           .main-header__edit-btn
             Edit
       .messages
-        .message
-          .upper-info
-            %p.upper-info__user
-              so
-            %p.upper-info__date
-              %span{class: "supText"}
-                2019/05/27(Mon) 17:00:00
-          .message__text
-            こんにちは
-      .form 
-        .new-message
-          .input-box
-            %input.input-text{placeholder: "type a message "}
-            %label.label-image
-              %i.fa.fa-image
-              %input.image-label__input{type: "file",name: "message[image]"}
-          %input.submit{type: "submit", name: "commit", value: "Send"}
-      
+        - @messages.each do |message|
+          .message
+            .upper-info
+              %p.upper-info__user
+                = message.user.name
+              %p.upper-info__date
+                %span{class: "supText"}
+                  = message.created_at.strftime("%Y-%m-%d %H:%M:%S")
+            .message__text
+              = message.text
+      .form
+        = form_for [@group,@message] do |f|
+          .new-message
+            .input-box
+              = f.text_field :text,class: "input-text",placeholder:"text a message"
+              %label.label-image
+                %i.fa.fa-image
+                = f.file_field :image,class: "image-label__input"
+            = f.submit value: "Send",class: "submit" ,"data-disable-with": "Send"
+        
 
 
   
