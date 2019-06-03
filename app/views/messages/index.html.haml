@@ -3,13 +3,13 @@
     .chat-side
       .side-header
         %p.side-header__name 
-          test
+          = current_user.name
         %ul.user-menu
           %li
-            = link_to  do
+            = link_to new_group_path do 
               %i.fa.fa-edit.edit
           %li
-            = link_to  do
+            = link_to  edit_user_registration_path(current_user) do
               %i.fa.fa-cog.set
       .group
         %p.group__name
