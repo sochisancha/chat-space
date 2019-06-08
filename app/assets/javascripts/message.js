@@ -39,15 +39,19 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('.input-text').val('');
+      $('#new_message')[0].reset();
       $('.submit').prop('disabled', false);
+    
       scroll()
   })
 
   .fail(function(){
     alert('送信できません。');
-    $('.submit').prop('disabled', false);
+    $('.form__submit').prop('disabled', false);
 })
+.always(function() {
+  $(".submit").removeAttr("disabled");
+  });
 
 
 })
