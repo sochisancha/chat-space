@@ -1,7 +1,5 @@
 $(function(){
-
   var user_list = $("#user-search-result");
-
   function appendUser(user){
     var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${user.name}</p>
@@ -15,8 +13,6 @@ $(function(){
               </div>`
       user_list.append(html);
   }
-
-
  $("#user-search-field").on("keyup",function(){
    var input = $("#user-search-field").val();
    $.ajax({
@@ -27,6 +23,7 @@ $(function(){
       processData:true,
       contentType:false
    })
+
    .done(function(users){
     $("#user-search-result").empty();
      if (users.length !== 0 ){
@@ -43,11 +40,7 @@ $(function(){
   })
  })
 
-
-
 $(document).on("click",".user-search-add",function(){
-
-
   var member_name = $(this).data("user-name");
   var member_id = $(this).data("user-id");
   var member_list = $("#chat-group-users");
@@ -56,23 +49,13 @@ $(document).on("click",".user-search-add",function(){
                 <p class="chat-group-user__name">${member_name}</p>
                 <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
               </div>`
-              
-
   member_list.append(html);
   $(this).parent().remove();
-  
-  
-  
-  
-
   })
 
   $(document).on("click",".user-search-remove",function(){
     $(this).parent().remove();
  })
-
-
-
 })
  
 

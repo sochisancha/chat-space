@@ -27,16 +27,8 @@
             = f.hidden_field  :name, name:"group[user_ids][]",id:"group_user_ids",value:""
             -# ,value:@user.id
             %p.chat-group-user__name
-            = @user.name
-            
-          
+            = @user.name      
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
-        =f.submit class: "chat-group-form__action-btn"
-          
-        -# = f.collection_check_boxes(:user_ids, User.all, :id, :name, include_hidden: false) do |b|
-        -#   = b.label { b.check_box + b.text } 
-        
-        -# %input.chat-group-form__action-btn{"data-disable-with": "Save", name: "commit", type: "submit", value: "Save"}/
-   
+        =f.submit class: "chat-group-form__action-btn" 
