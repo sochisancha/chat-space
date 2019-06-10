@@ -12,8 +12,7 @@
               - @group.users.each do |member|
                 %li.member-list__member
                   = member.name
-          .main-header__edit-btn
-            Edit
+          = link_to 'Edit', edit_group_path(@group),class:"main-header__edit-btn" 
       .messages
         - @messages.each do |message|
           .message
