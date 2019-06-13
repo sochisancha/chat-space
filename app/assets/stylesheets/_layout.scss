@@ -45,6 +45,10 @@
     .groups{
       padding:20px;
       margin-top: 100px;
+      overflow: scroll;
+      height: calc(100vh - 100px);
+      width:300px;
+      box-sizing: border-box;
       .group{
         margin: 0px 0px 40px 0px;
         box-sizing: border-box;
