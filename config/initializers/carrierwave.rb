@@ -13,5 +13,5 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory  = 'sandasoichiro-chat-space'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/sandasoichiro-chat-space'
+  config.asset_host = 'https://s3.sandasoichiro-chat-space.amazonaws.com'
 end
