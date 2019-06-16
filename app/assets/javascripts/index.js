@@ -27,22 +27,25 @@ $(function(){
    
 
    var input = $("#user-search-field").val();
-  if (input.length == 0) {
-    user_list.remove();
-  }
+  //  if (input.length == 0) {
+  //    user_list.remove();
+  //  }
    $.ajax({
     type: 'GET',
     url: '/users',
       data: { keyword: input },
       dataType: 'json',
       processData:true,
-      contentType:false
+      contentType:false,
+      
    })
    .done(function(users){
     $("#user-search-result").empty();
     
-     if (users.length == 0 || input.length == 0 ){
+     if (users.length == 0  ){
         appendErrMsgToHTML("一致する名前はありません");
+     }else if (input.length == 0){
+      $("#user-search-field")[0].reset;
      }else{
        users.forEach(function(user){appendUser(user);})
      }
